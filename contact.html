@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Contact CozyCorner Bookstore & Café. Find our location, hours, and get in touch with our team.">
+    <title>Contact Us | CozyCorner Bookstore & Café</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="nav" aria-label="Main navigation">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="fas fa-book-open"></i></span>
+                CozyCorner
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header" aria-label="Contact CozyCorner">
+            <div class="page-header-bg" role="img"
+                aria-label="Cozy café interior with coffee cups and warm wood surfaces"></div>
+            <div class="container page-header-content">
+                <p class="subtitle">We'd Love to Hear From You</p>
+                <h1>Get in Touch</h1>
+                <p>Whether you have a question, a book recommendation, or just want to say hello, our team is here and
+                    happy to help.</p>
+            </div>
+        </section>
+
+        <section class="section-padding contact-info" aria-labelledby="info-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="info-heading">Visit Our Corner</h2>
+                    <p>Find us in the heart of the Bookworm District</p>
+                </div>
+
+                <div class="info-grid">
+                    <article class="info-card">
+                        <div class="info-icon-main" aria-hidden="true"><i class="fas fa-map-marked-alt"></i></div>
+                        <h3>Address</h3>
+                        <p>123 Literary Lane<br>Bookworm District, BK 10101<br>United States</p>
+                    </article>
+
+                    <article class="info-card">
+                        <div class="info-icon-main" aria-hidden="true"><i class="fas fa-phone-alt"></i></div>
+                        <h3>Phone</h3>
+                        <p>(555) 123-4567<br>Mon–Sun during business hours</p>
+                    </article>
+
+                    <article class="info-card">
+                        <div class="info-icon-main" aria-hidden="true"><i class="fas fa-envelope-open-text"></i></div>
+                        <h3>Email</h3>
+                        <p>hello@cozycorner.com<br>events@cozycorner.com</p>
+                    </article>
+
+                    <article class="info-card">
+                        <div class="info-icon-main" aria-hidden="true"><i class="fas fa-clock"></i></div>
+                        <h3>Hours</h3>
+                        <p>Mon–Fri: 7AM–9PM<br>Sat: 8AM–10PM<br>Sun: 8AM–8PM</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding contact-main" aria-labelledby="form-heading">
+            <div class="container contact-grid">
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.24126349938!2d-73.9878436!3d40.7579747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1680000000000!5m2!1sen!2sus"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="CozyCorner Bookstore location on Google Maps">
+                    </iframe>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <h2>Send a Message</h2>
+                    <p>Have a question, suggestion, or booking inquiry? Fill out the form below and we'll get back to
+                        you within 24 hours.</p>
+
+                    <form class="contact-form" action="#" method="post" aria-label="Contact form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Jane Doe" required
+                                aria-required="true">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="jane@example.com" required
+                                aria-required="true">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required aria-required="true">
+                                <option value="" disabled selected>Select a topic</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="events">Event Booking</option>
+                                <option value="membership">Membership</option>
+                                <option value="orders">Book Orders</option>
+                                <option value="feedback">Feedback</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us what's on your mind..." required
+                                aria-required="true"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="social-section" aria-labelledby="social-heading">
+            <div class="container">
+                <h2 id="social-heading">Connect With Us</h2>
+                <p>Follow along for daily book recommendations and café moments.</p>
+
+                <div class="social-buttons">
+                    <a href="#" class="social-link-btn" aria-label="Follow us on Facebook">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </a>
+                    <a href="#" class="social-link-btn" aria-label="Follow us on Instagram">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                    <a href="#" class="social-link-btn" aria-label="Follow us on Twitter">
+                        <i class="fab fa-x-twitter"></i> Twitter
+                    </a>
+                    <a href="#" class="social-link-btn" aria-label="Follow us on Pinterest">
+                        <i class="fab fa-pinterest-p"></i> Pinterest
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding faq-section" aria-labelledby="faq-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="faq-heading">Frequently Asked Questions</h2>
+                    <p>Quick answers to common questions about CozyCorner</p>
+                </div>
+
+                <div class="faq-list">
+                    <details>
+                        <summary>Do I need a membership to visit or purchase books?</summary>
+                        <div class="faq-answer">
+                            <p>Not at all! CozyCorner is open to everyone. Our space, café, and bookstore are fully
+                                accessible to the public during business hours.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Can I host a private event or book club meeting?</summary>
+                        <div class="faq-answer">
+                            <p>Absolutely! We love hosting gatherings. Contact us at events@cozycorner.com for
+                                availability and pricing.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Is the café menu available for dietary restrictions?</summary>
+                        <div class="faq-answer">
+                            <p>We take dietary needs very seriously. Our café menu labels vegan, gluten-free, and
+                                nut-free options clearly.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>CozyCorner</h3>
+                    <p>A warm haven for book lovers, coffee enthusiasts, and dreamers.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-btn" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" class="social-btn" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Literary Lane</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> hello@cozycorner.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 CozyCorner Bookstore & Café. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
