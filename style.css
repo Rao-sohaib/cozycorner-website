@@ -1157,13 +1157,11 @@
        transition: var(--transition);
    }
 
-   .nav-links a:hover::after,
-   .nav-links a.active::after {
+   .nav-links a:hover::after{
        width: 100%;
    }
 
-   .nav-links a:hover,
-   .nav-links a.active {
+   .nav-links a:hover {
        color: var(--brown-dark);
    }
 
@@ -1961,8 +1959,7 @@
        transition: var(--transition);
    }
 
-   .nav-links a:hover::after,
-   .nav-links a.active::after {
+   .nav-links a:hover::after{
        width: 100%;
    }
 
