@@ -170,76 +170,6 @@
    /* ============================================
        HEADER & NAVIGATION
        ============================================ */
-   .header {
-       background: rgba(255, 255, 255, 0.95);
-       backdrop-filter: blur(10px);
-       box-shadow: var(--shadow-sm);
-       position: sticky;
-       top: 0;
-       z-index: 1000;
-       width: 100%;
-   }
-
-   .nav {
-       max-width: var(--max-width);
-       margin: 0 auto;
-       padding: 0 1.5rem;
-       display: flex;
-       justify-content: space-between;
-       align-items: center;
-       height: 80px;
-   }
-
-   .logo {
-       font-family: var(--font-heading);
-       font-size: 1.7rem;
-       font-weight: 700;
-       color: var(--brown-dark);
-       display: flex;
-       align-items: center;
-       gap: 0.5rem;
-   }
-
-   .logo-icon {
-       font-size: 1.9rem;
-   }
-
-   .nav-links {
-       display: flex;
-       list-style: none;
-       gap: 2.5rem;
-   }
-
-   .nav-links a {
-       font-weight: 500;
-       font-size: 0.95rem;
-       color: var(--text);
-       position: relative;
-       padding: 0.25rem 0;
-   }
-
-   /* Hover Effect 4: Link underline animation */
-   .nav-links a::after {
-       content: '';
-       position: absolute;
-       bottom: -2px;
-       left: 0;
-       width: 0;
-       height: 2px;
-       background: var(--orange);
-       transition: var(--transition);
-   }
-
-   .nav-links a:hover::after,
-   .nav-links a.active::after {
-       width: 100%;
-   }
-
-   .nav-links a:hover,
-   .nav-links a.active {
-       color: var(--brown-dark);
-   }
-
    .menu-toggle {
        display: none;
        background: none;
@@ -247,6 +177,53 @@
        font-size: 1.5rem;
        cursor: pointer;
        color: var(--brown-dark);
+   }
+
+   /* Mobile styles */
+   @media (max-width: 768px) {
+       .menu-toggle {
+           display: block;
+           background: #3d2622;
+           color: #fff;
+           border: none;
+           font-size: 1.5rem;
+           cursor: pointer;
+           width: 44px;
+           height: 44px;
+           border-radius: 8px;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+       }
+
+       .nav-links {
+           position: absolute;
+           top: 100%;
+           left: 0;
+           right: 0;
+           text-align: center;
+           flex-direction: column;
+           background: #fff;
+           padding: 1rem;
+           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+           display: none;
+           opacity: 0;
+           transform: translateY(-10px);
+           transition: opacity 0.3s ease, transform 0.3s ease;
+       }
+
+       .nav-links.nav-open {
+           display: flex;
+           opacity: 1;
+           transform: translateY(0);
+       }
+   }
+
+   /* Hide toggle on desktop */
+   @media (min-width: 769px) {
+       .menu-toggle {
+           display: none;
+       }
    }
 
    /* ============================================
