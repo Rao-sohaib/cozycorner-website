@@ -21,24 +21,28 @@
 
 <body>
 
-    <header class="header">
-        <nav class="nav" aria-label="Main navigation">
-            <a href="index.html" class="logo">
-                <span class="logo-icon"><i class="fas fa-book-open"></i></span>
-                CozyCorner
-            </a>
+  <header class="header">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html" class="logo">
+        <span class="logo-icon"><i class="fas fa-book-open"></i></span>
+        CozyCorner
+      </a>
 
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
 
-            <button class="menu-toggle" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
-        </nav>
-    </header>
+      <div class="nav-cta">
+        <button  class="btn btn-primary btn-sm"><a href="contact.html">Book a Table</a></button>
+      </div>
+
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+  </header>
 
     <main>
         <section class="hero" aria-label="Welcome to CozyCorner">
@@ -414,57 +418,51 @@
 
 
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
 
-            if (!menuToggle || !navLinks) return;
+      if (!menuToggle || !navLinks) return;
 
-            menuToggle.addEventListener('click', () => {
-                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.addEventListener('click', () => {
+        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
 
-                // Toggle the menu visibility
-                navLinks.classList.toggle('nav-open');
+        navLinks.classList.toggle('nav-open');
+        menuToggle.setAttribute('aria-expanded', !isExpanded);
 
-                // Update ARIA for screen readers
-                menuToggle.setAttribute('aria-expanded', !isExpanded);
+        const icon = menuToggle.querySelector('i');
+        if (icon) {
+          icon.classList.toggle('fa-bars');
+          icon.classList.toggle('fa-times');
+        }
+      });
 
-                // Optional: toggle icon between bars and X
-                const icon = menuToggle.querySelector('i');
-                if (icon) {
-                    icon.classList.toggle('fa-bars');
-                    icon.classList.toggle('fa-times');
-                }
-            });
-
-            // Close menu when clicking a link (useful for same-page anchors)
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('nav-open');
-                    menuToggle.setAttribute('aria-expanded', 'false');
-                    const icon = menuToggle.querySelector('i');
-                    if (icon) {
-                        icon.classList.add('fa-bars');
-                        icon.classList.remove('fa-times');
-                    }
-                });
-            });
-
-            // Close menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
-                    navLinks.classList.remove('nav-open');
-                    menuToggle.setAttribute('aria-expanded', 'false');
-                    const icon = menuToggle.querySelector('i');
-                    if (icon) {
-                        icon.classList.add('fa-bars');
-                        icon.classList.remove('fa-times');
-                    }
-                }
-            });
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('nav-open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          const icon = menuToggle.querySelector('i');
+          if (icon) {
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-times');
+          }
         });
-    </script>
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+          navLinks.classList.remove('nav-open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          const icon = menuToggle.querySelector('i');
+          if (icon) {
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-times');
+          }
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>

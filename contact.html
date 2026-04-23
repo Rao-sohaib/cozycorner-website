@@ -21,24 +21,28 @@
 
 <body>
 
-    <header class="header">
-        <nav class="nav" aria-label="Main navigation">
-            <a href="index.html" class="logo">
-                <span class="logo-icon"><i class="fas fa-book-open"></i></span>
-                CozyCorner
-            </a>
+  <header class="header">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html" class="logo">
+        <span class="logo-icon"><i class="fas fa-book-open"></i></span>
+        CozyCorner
+      </a>
 
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
 
-            <button class="menu-toggle" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
-        </nav>
-    </header>
+      <div class="nav-cta">
+        <button  class="btn btn-primary btn-sm"><a href="contact.html">Book a Table</a></button>
+      </div>
+
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+  </header>
 
     <main>
         <section class="page-header" aria-label="Contact CozyCorner">
@@ -247,13 +251,9 @@
             menuToggle.addEventListener('click', () => {
                 const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
 
-                // Toggle the menu visibility
                 navLinks.classList.toggle('nav-open');
-
-                // Update ARIA for screen readers
                 menuToggle.setAttribute('aria-expanded', !isExpanded);
 
-                // Optional: toggle icon between bars and X
                 const icon = menuToggle.querySelector('i');
                 if (icon) {
                     icon.classList.toggle('fa-bars');
@@ -261,7 +261,6 @@
                 }
             });
 
-            // Close menu when clicking a link (useful for same-page anchors)
             navLinks.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     navLinks.classList.remove('nav-open');
@@ -274,7 +273,6 @@
                 });
             });
 
-            // Close menu when clicking outside
             document.addEventListener('click', (e) => {
                 if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
                     navLinks.classList.remove('nav-open');
@@ -285,6 +283,20 @@
                         icon.classList.remove('fa-times');
                     }
                 }
+            });
+        });
+
+
+        const links = document.querySelectorAll(".nav-links a");
+
+        links.forEach(link => {
+            link.addEventListener("click", function () {
+
+                // sab se active remove karo
+                links.forEach(l => l.classList.remove("active"));
+
+                // jis par click hua usko active do
+                this.classList.add("active");
             });
         });
     </script>

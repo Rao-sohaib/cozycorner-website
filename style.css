@@ -170,61 +170,61 @@
    /* ============================================
        HEADER & NAVIGATION
        ============================================ */
-   .menu-toggle {
-       display: none;
-       background: none;
-       border: none;
-       font-size: 1.5rem;
-       cursor: pointer;
-       color: var(--brown-dark);
-   }
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--brown-dark);
+}
 
-   /* Mobile styles */
-   @media (max-width: 768px) {
-       .menu-toggle {
-           display: block;
-           background: #3d2622;
-           color: #fff;
-           border: none;
-           font-size: 1.5rem;
-           cursor: pointer;
-           width: 44px;
-           height: 44px;
-           border-radius: 8px;
-           display: flex;
-           align-items: center;
-           justify-content: center;
-       }
+/* Mobile styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        background: #3d2622;
+        color: #fff;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        width: 44px;
+        height: 44px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-       .nav-links {
-           position: absolute;
-           top: 100%;
-           left: 0;
-           right: 0;
-           text-align: center;
-           flex-direction: column;
-           background: #fff;
-           padding: 1rem;
-           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-           display: none;
-           opacity: 0;
-           transform: translateY(-10px);
-           transition: opacity 0.3s ease, transform 0.3s ease;
-       }
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        flex-direction: column;
+        background: #fff;
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: none;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
 
-       .nav-links.nav-open {
-           display: flex;
-           opacity: 1;
-           transform: translateY(0);
-       }
-   }
+    .nav-links.nav-open {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-   /* Hide toggle on desktop */
-   @media (min-width: 769px) {
-       .menu-toggle {
-           display: none;
-       }
-   }
+/* Hide toggle on desktop */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+}
 
    /* ============================================
        HERO SECTION
